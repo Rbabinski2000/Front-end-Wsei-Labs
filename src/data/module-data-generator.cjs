@@ -2,7 +2,7 @@ const fs = require('fs');
 
 let names = [];                        // tablica z obiektami 
 
-fs.readFile('./src/module-gen/names.txt', 'utf8', (err, data) => {
+fs.readFile('./src/data/names.txt', 'utf8', (err, data) => {
     if (err) {
         console.error(err);
         return;
@@ -29,7 +29,7 @@ fs.readFile('./src/module-gen/names.txt', 'utf8', (err, data) => {
     }
     content += "];"
     //zapis łańcucha do pliku 
-    fs.writeFile('./src/module-gen/module-data.js', content, (err) => {
+    fs.writeFile('./src/data/module-data.js', content, (err) => {
         if (err) {
            console.error(err);
         }

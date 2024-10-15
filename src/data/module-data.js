@@ -1,0 +1,10 @@
+export const data = [{"id":1,"name":"FRANCISZEK","birth":"2024-10-15T12:48:02.163Z","eyes":"blue"},
+{"id":2,"name":"IGNACY","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":3,"name":"IGNACY","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":4,"name":"ANTONI","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":5,"name":"NIKODEM","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":6,"name":"JAN","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":7,"name":"MIKOŁAJ","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":8,"name":"NIKODEM","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":9,"name":"LEON","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"},
+{"id":10,"name":"JAKUB","birth":"2024-10-15T12:48:02.164Z","eyes":"blue"}];
