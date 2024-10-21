@@ -16,7 +16,7 @@ fs.readFile('./src/data/names.txt', 'utf8', (err, data) => {
     for(let i = 0; i < count; i++){
         //losowanie imienia z bilioteki imion
         const name = names[Math.floor(Math.random() * names.length)]
-        const birthDate=new Date (Date.now())
+        const birthDate=new Date(Date.now() - Math.random() * (60 * 60 * 24 * 365 * 80 * 1000));
         const Eyes="blue";
 
         const obj={
