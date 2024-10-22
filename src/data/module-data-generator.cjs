@@ -22,8 +22,9 @@ fs.readFile('./src/data/names.txt', 'utf8', (err, data) => {
         const obj={
             id:i+1,
             name:name,
-            birth:birthDate,
-            eyes:Eyes
+            birth: birthDate.toISOString().split('T')[0], // YYYY-MM-DD
+            eyes:Eyes,
+            rating:0
         }
         content+=JSON.stringify(obj)+(i<count-1 ? ',\n':"");
     }

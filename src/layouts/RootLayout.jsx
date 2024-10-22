@@ -1,25 +1,30 @@
 import NavBarMenu from "./NavBarMenu";
 import Footer from './Footer';
+import PropTypes from "prop-types";
 
 
 function RootLayout ({children,items}) {
   return (
-    <div className="d-flex flex-column min-vh-100">
-      <nav className="navbar fixed-top bg-light w-100 ps-3">
+    <div>
         <NavBarMenu items={items} />
-      </nav>
-
-      <main className="flex-grow-1 flex-column w-50 overflow-auto" style={{ marginTop: '60px', marginBottom: '60px' }}>
+      <main>
         {children}
       </main>
-
-      <footer className="footer bg-body-tertiary text-center text-lg-start text-muted w-100 mt-auto m-b-0">
         <Footer />
-      </footer>
     </div>
   );
 }
 
+RootLayout.propType={
+  children:PropTypes.node.isRequired,
+  items:PropTypes.arrayOf(
+    PropTypes.shape({
+      id:PropTypes.number.isRequired,
+      label:PropTypes.string.isRequired,
+      path:PropTypes.string.isRequired
+    }).isRequired,
+  )
+}
 
 
 export default RootLayout
