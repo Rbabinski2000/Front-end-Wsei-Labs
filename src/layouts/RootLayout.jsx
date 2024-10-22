@@ -15,7 +15,7 @@ function RootLayout ({children,items}) {
   );
 }
 
-RootLayout.propType={
+RootLayout.propTypes = {
   children:PropTypes.node.isRequired,
   items:PropTypes.arrayOf(
     PropTypes.shape({

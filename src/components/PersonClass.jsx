@@ -50,7 +50,8 @@ PersonClass.propTypes={
         birth: PropTypes.string.isRequired,
         eyes: PropTypes.string.isRequired,
         rating:PropTypes.number.isRequired
-    }).isRequired
+    }).isRequired,
+    dispatch:PropTypes.func.isRequired,
 };
 
 
