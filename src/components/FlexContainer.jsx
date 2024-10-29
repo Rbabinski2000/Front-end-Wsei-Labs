@@ -1,14 +1,15 @@
-import {useReducer} from 'react';
-import AppReducer from '../data/AppReducer'
+import { useContext } from "react";
 import PropTypes from "prop-types";
+import AppContext from "../data/AppContext";
 
-const FlexContainer=({element:Element,data})=>{
-    const [items, dispatch] = useReducer(AppReducer, data);
+const FlexContainer=({element:Element})=>{
+  const context = useContext(AppContext);
+  const items = context.items;
     return(
       <div className="d-flex flex-wrap">
         {items.map((item,index) =>(
             <div key={index} className="flex-ite p-2">
-                <Element person={item} dispatch={dispatch}/>
+                <Element person={item}/>
             </div>
         ))}
       </div>
@@ -16,7 +17,6 @@ const FlexContainer=({element:Element,data})=>{
 }
 FlexContainer.propTypes={
     element:PropTypes.elementType.isRequired,
-    data:PropTypes.array.isRequired
 }
 
 export default FlexContainer

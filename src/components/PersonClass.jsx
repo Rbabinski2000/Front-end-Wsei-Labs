@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 import RatingBar from './RatingBar';
+import {useContext} from 'react';
+import AppContext from '../data/AppContext';
+import { Navigate, useNavigate } from 'react-router-dom';
 
+const PersonClass = ({ person}) => {
+    //const context = useContext(AppContext);
+    const {dispatch} = useContext(AppContext);
+    const navigate = useNavigate(); // Hook to programmatically navigate
+  
 
-
-const PersonClass = ({ person,dispatch }) => {
     const handleRate=()=>{
         const newRating=person.rating===10?0:person.rating+1;
         dispatch({
@@ -13,11 +19,7 @@ const PersonClass = ({ person,dispatch }) => {
         })
     }
         const handleEdit=()=>{
-            dispatch({
-                type: "edit",
-                id: person.id
-                    });
-            alert(`Edit person with id:${person.id}`)
+            navigate(`/Lab4/edit/${person.id}`);
         };
         const handleDelete=()=>{
             dispatch({
@@ -50,8 +52,7 @@ PersonClass.propTypes={
         birth: PropTypes.string.isRequired,
         eyes: PropTypes.string.isRequired,
         rating:PropTypes.number.isRequired
-    }).isRequired,
-    dispatch:PropTypes.func.isRequired,
+    }).isRequired
 };
 
 

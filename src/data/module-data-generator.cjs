@@ -1,3 +1,4 @@
+const { randomInt } = require('crypto');
 const fs = require('fs');
 
 let names = [];                        // tablica z obiektami 
@@ -24,7 +25,7 @@ fs.readFile('./src/data/names.txt', 'utf8', (err, data) => {
             name:name,
             birth: birthDate.toISOString().split('T')[0], // YYYY-MM-DD
             eyes:Eyes,
-            rating:0
+            rating:randomInt(10)
         }
         content+=JSON.stringify(obj)+(i<count-1 ? ',\n':"");
     }
