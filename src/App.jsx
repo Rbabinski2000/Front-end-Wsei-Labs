@@ -1,9 +1,9 @@
 import {Routes,Route} from 'react-router-dom';
-import {useReducer} from 'react';
-import { data } from "./data/module-data";
+//import {useReducer} from 'react';
+//import { data } from "./data/module-data";
 // import './App.css'
-import AppContext from './data/AppContext.js'
-import AppReducer from './data/AppReducer.js'
+//import AppContext from './data/AppContext.js'
+//import AppReducer from './data/AppReducer.js'
 import RootLayout from './layouts/RootLayout.jsx'
 import Lab1 from  './pages/Lab1.jsx'
 import Lab2 from  './pages/Lab2.jsx'
@@ -12,10 +12,10 @@ import Home from  './pages/home.jsx'
 import NotFound from  './pages/NotFound.jsx'
 import AddForm from './components/AddForm.jsx';
 import EditForm from './components/EditForm.jsx';
-
+import AppProvider from './data/AppProvider.js';
 
 function App() {
-  const [state, appDispatch] = useReducer(AppReducer, data);
+ 
 
   const menuItems = [
     {id: 1, label: "Home",url:"/",urlPattern:"/",element:<Home/>},
@@ -28,7 +28,7 @@ function App() {
   ];
   return (
     <>
-      <AppContext.Provider value={{items:state,dispatch:appDispatch}}>
+      <AppProvider>
         <RootLayout items={menuItems}>
           <Routes>
                 {menuItems.map(item=>(
@@ -37,7 +37,7 @@ function App() {
                 <Route path='/*' element={<NotFound/>}/>
             </Routes>
         </RootLayout>
-      </AppContext.Provider>
+      </AppProvider>
     </>
   )
 }

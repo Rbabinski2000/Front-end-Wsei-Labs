@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import AppContext from "../data/AppContext";
@@ -90,6 +90,8 @@ const EditForm = () => {
                 <label>Rating:</label>
                 <input
                     type="number"
+                    min={0}
+                    max={10}
                     {...register("rating", {
                         required: "Rating is required",
                         min: { value: 0, message: "Minimum rating is 0" },

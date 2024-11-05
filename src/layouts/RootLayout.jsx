@@ -21,7 +21,7 @@ RootLayout.propTypes = {
     PropTypes.shape({
       id:PropTypes.number.isRequired,
       label:PropTypes.string.isRequired,
-      path:PropTypes.string.isRequired
+      url:PropTypes.string.isRequired
     }).isRequired,
   )
 }
