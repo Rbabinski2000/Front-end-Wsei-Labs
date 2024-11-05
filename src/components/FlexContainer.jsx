@@ -1,10 +1,8 @@
-import { useContext } from "react";
 import PropTypes from "prop-types";
-import AppContext from "../data/AppContext";
+import data from "./useData";
 
 const FlexContainer=({element:Element})=>{
-  const context = useContext(AppContext);
-  const items = context.items;
+  const items = data();
     return(
       <div className="d-flex flex-wrap">
         {items.map((item,index) =>(

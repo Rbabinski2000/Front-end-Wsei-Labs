@@ -12,7 +12,7 @@ import Home from  './pages/home.jsx'
 import NotFound from  './pages/NotFound.jsx'
 import AddForm from './components/AddForm.jsx';
 import EditForm from './components/EditForm.jsx';
-import AppProvider from './data/AppProvider.js';
+import AppProvider from './data/AppProvider';
 
 function App() {
  

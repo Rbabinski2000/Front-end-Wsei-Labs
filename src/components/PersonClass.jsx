@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import RatingBar from './RatingBar';
-import {useContext} from 'react';
-import AppContext from '../data/AppContext';
-import { Navigate, useNavigate } from 'react-router-dom';
+//import {useContext} from 'react';
+//import AppContext from '../data/AppContext';
+import {useNavigate } from 'react-router-dom';
+import useDispatch from "./useDispatch"
 
 const PersonClass = ({ person}) => {
-    //const context = useContext(AppContext);
-    const {dispatch} = useContext(AppContext);
+
+    const dispatch=useDispatch();
     const navigate = useNavigate(); // Hook to programmatically navigate
-  
+    
 
     const handleRate=()=>{
         const newRating=person.rating===10?0:person.rating+1;

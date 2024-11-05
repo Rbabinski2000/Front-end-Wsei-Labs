@@ -1,12 +1,19 @@
-import { useContext, useEffect } from "react";
+//import { useContext, useEffect } from "react";
+import {useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
-import AppContext from "../data/AppContext";
+//import AppContext from "../data/AppContext";
 import { useNavigate } from "react-router-dom";
+
+import useData from "./useData";
+import useDispatch from "./useDispatch";
 
 const EditForm = () => {
     const { id } = useParams(); // Get the ID from the URL
-    const { dispatch, items } = useContext(AppContext);
+    //const { dispatch, items } = useContext(AppContext);
+    const items=useData();
+    const dispatch=useDispatch();
+
     const navigate = useNavigate(); // Hook to programmatically navigate
     
     // Find the person by ID
