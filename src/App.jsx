@@ -8,11 +8,14 @@ import RootLayout from './layouts/RootLayout.jsx'
 import Lab1 from  './pages/Lab1.jsx'
 import Lab2 from  './pages/Lab2.jsx'
 import Lab3 from  './pages/Lab3.jsx'
+import Lab5 from './pages/Lab5.jsx';
 import Home from  './pages/home.jsx'
 import NotFound from  './pages/NotFound.jsx'
 import AddForm from './components/AddForm.jsx';
 import EditForm from './components/EditForm.jsx';
 import AppProvider from './data/AppProvider';
+import UserPage from './pages/userPage.jsx';
+import PostCommentsPage from './pages/PostCommentsPage.jsx';
 
 function App() {
  
@@ -23,7 +26,8 @@ function App() {
     {id: 3, label: "Lab2",url:"/Lab2/:id",urlPattern: "/lab2/:id",element:<Lab2/>},
     {id: 4, label: "Lab3",url:"/Lab3",urlPattern:"/Lab3",element:<Lab3/>}, 
     {id: 5, label: "Add",url:"/Lab4/add",urlPattern:"/Lab4/add",element:<AddForm/>}, 
-    {id: 6, label: "Edit",url:"/Lab4/edit/:id",urlPattern:"/Lab4/edit/:id",element:<EditForm/>} 
+    {id: 6, label: "Edit",url:"/Lab4/edit/:id",urlPattern:"/Lab4/edit/:id",element:<EditForm/>},
+    {id: 7, label: "Lab5",url:"/Lab5",urlPattern:"/Lab5",element:<Lab5/>}
     
   ];
   return (
@@ -34,6 +38,8 @@ function App() {
                 {menuItems.map(item=>(
                   <Route path={item.url} element={item.element} key={item.id}></Route>
                 ))}
+                <Route path='/Lab5/users/:id' element={<UserPage/>}/>
+                <Route path='/Lab5/posts/:id/comments' element={<PostCommentsPage/>}/>
                 <Route path='/*' element={<NotFound/>}/>
             </Routes>
         </RootLayout>
